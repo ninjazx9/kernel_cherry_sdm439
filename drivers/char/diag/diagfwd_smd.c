@@ -490,7 +490,7 @@ int diag_smd_check_state(void *ctxt)
 	info = (struct diag_smd_info *)ctxt;
 	return (int)(atomic_read(&info->diag_state));
 }
-EXPORT_SYMBOL(diag_smd_check_state)
+EXPORT_SYMBOL(diag_smd_check_state);
 void diag_smd_invalidate(void *ctxt, struct diagfwd_info *fwd_ctxt)
 {
 	struct diag_smd_info *smd_info = NULL;
@@ -505,7 +505,7 @@ void diag_smd_invalidate(void *ctxt, struct diagfwd_info *fwd_ctxt)
 	DIAG_LOG(DIAG_DEBUG_PERIPHERALS, "%s prev: %pK fwd_ctxt: %pK\n",
 		 smd_info->name, prev, smd_info->fwd_ctxt);
 }
-EXPORT_SYMBOL(diag_smd_invalidate)
+EXPORT_SYMBOL(diag_smd_invalidate);
 static void __diag_smd_init(struct diag_smd_info *smd_info)
 {
 	char wq_name[DIAG_SMD_NAME_SZ + 10];
@@ -567,7 +567,7 @@ int diag_smd_init(void)
 
 	return 0;
 }
-EXPORT_SYMBOL(diag_smd_init)
+EXPORT_SYMBOL(diag_smd_init);
 static void smd_late_init(struct diag_smd_info *smd_info)
 {
 	struct diagfwd_info *fwd_info = NULL;
@@ -608,7 +608,7 @@ int diag_smd_init_peripheral(uint8_t peripheral)
 
 	return 0;
 }
-EXPORT_SYMBOL(diag_smd_init_peripheral)
+EXPORT_SYMBOL(diag_smd_init_peripheral);
 static void __diag_smd_exit(struct diag_smd_info *smd_info)
 {
 	if (!smd_info)
@@ -661,7 +661,7 @@ void diag_smd_exit(void)
 	platform_driver_unregister(&diag_smd_dci_driver);
 	platform_driver_unregister(&diag_smd_dci_cmd_driver);
 }
-EXPORT_SYMBOL(diag_smd_exit)
+EXPORT_SYMBOL(diag_smd_exit);
 static int diag_smd_write_ext(struct diag_smd_info *smd_info,
 			      unsigned char *buf, int len)
 {
